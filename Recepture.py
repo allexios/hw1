@@ -22,19 +22,37 @@ cook_book = {
 # 3. Присваиваем переменным значения взятые из файла
 # 4. Формируем новый словарь cook_book
 
-ingridient_name = []
+
+
+global_spisok = []
+
+def recepture_funct(number_of_ingredients):
+    for x in range(number_of_ingredients):
+        recepture_lists = f.readline().split("|")
+        return global_spisok.append(recepture_lists)
+
+
 
 with open("Recepture.txt") as f:
     for line in f:
         recepture = line
         number_of_ingredients = int(f.readline())
-        print(recepture, number_of_ingredients)
-        while number_of_ingredients != 0:
-            recepture_lists = f.readline()
-            recepture_list = recepture_lists.split('|')
-        
+
+        #print(recepture_funct(number_of_ingredients))
+
+
+
+    print("Рецепты закончились :( ")
+#        recepture_lists = f.readline()
+#        print(recepture, type(recepture))
+#        print(number_of_ingredients, type(number_of_ingredients))
+#        print(recepture_lists, type(recepture_lists))
+#        if number_of_ingredients == 2:
+#            recepture_lists = f.readline()
+#            recepture_list = recepture_lists.split('|')
 #        print(recepture_list)
-            number_of_ingredients -= 1
+#            #number_of_ingredients -= 1
+#        break
 
 def get_shop_list_by_dishes(dishes, person_count):
     shop_list = {}
